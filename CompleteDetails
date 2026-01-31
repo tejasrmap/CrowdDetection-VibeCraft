@@ -46,7 +46,7 @@ Simple Architecture Diagram
 └──────────────────────────────┘
 
 
-🛠️ Tech Stack Used
+Tech Stack Used
 
 Computer Vision & AI
 
@@ -179,6 +179,6 @@ Stability before adding features
 Hackathon-ready clarity and simplicity
 
 
-🏁 Conclusion
+Conclusion
 
 This project demonstrates how existing CCTV infrastructure can be transformed into a real-time crowd intelligence system. By combining computer vision, backend APIs, and a student-friendly dashboard, the system helps reduce time wastage and improves decision-making on campus
