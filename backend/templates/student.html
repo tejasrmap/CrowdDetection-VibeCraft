@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Campus Crowd Monitoring</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='student.css') }}">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="nav">
+    <div class="brand">Crowd Monitoring<br>& Decision System</div>
+    <ul class="nav-list">
+      <li class="nav-item active" data-view="live">Live Overview</li>
+      <li class="nav-item" data-view="locations">Locations</li>
+      <li class="nav-item" data-view="patterns">Patterns</li>
+    </ul>
+    <div class="nav-footer">CCTV Analytics</div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div>
+      
+        <h1 id="pageTitle">Main Mess</h1>
+        <p>Real-time crowd intelligence</p>
+      </div>
+      <div class="dropdown">
+        <button id="dropdownBtn">Main Mess ▾</button>
+        <div class="dropdown-menu"></div>
+      </div>
+    </header>
+
+    <section id="live" class="view active-view">
+      <div class="decision">
+        <span>System Recommendation</span>
+        <h2 id="decision">—</h2>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="panel big">
+          <span>People Detected</span>
+          <span id="people">—</span>
+        </div>
+        <div class="panel">
+          <span>Crowd Status</span>
+          <span id="crowd">—</span>
+        </div>
+        <div class="panel">
+          <span>Queue Pressure</span>
+          <span id="pressure">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="locations" class="view">
+      <div class="location-grid" id="locationGrid"></div>
+    </section>
+
+   <section id="patterns" class="view">
+
+  <h2 class="section-title">Crowd Behaviour & Patterns</h2>
+
+  <div class="analysis-grid">
+
+    <!-- TREND -->
+    <div class="analysis-card">
+      <h3>📈 Crowd Trend</h3>
+      <p id="pattern-trend">—</p>
+    </div>
+
+    <!-- PEAK -->
+    <div class="analysis-card">
+      <h3>⏰ Peak Analysis</h3>
+      <p id="pattern-peak">—</p>
+    </div>
+
+    <!-- STABILITY -->
+    <div class="analysis-card">
+      <h3>📊 Crowd Stability</h3>
+      <p id="pattern-stability">—</p>
+    </div>
+
+    <!-- CONFIDENCE -->
+    <div class="analysis-card">
+      <h3>✅ Decision Confidence</h3>
+      <p id="pattern-confidence">—</p>
+      <div class="confidence-meter">
+  <div class="confidence-fill" id="confidence-fill"></div>
+</div>
+
+    </div>
+
+    <!-- ADVICE -->
+    <div class="analysis-card">
+      <h3>🎯 Student Advice</h3>
+      <p id="pattern-advice">—</p>
+    </div>
+
+      <div class="analysis-card">
+  <h3>📉 Crowd Trend (Last 30 mins)</h3>
+  <canvas id="trendCanvas" height="120"></canvas>
+</div>
+
+
+
+  </div>
+
+</section>
+
+  </main>
+</div>
+
+<script src="{{ url_for('static', filename='student.js') }}"></script>
+</body>
+</html>

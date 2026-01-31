@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin | Crowd Intelligence</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+
+  <!-- Chart.js (REQUIRED) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Admin logic -->
+  <script src="{{ url_for('static', filename='admin.js') }}" defer></script>
+</head>
+
+
+<body>
+
+<!-- LOGIN SCREEN -->
+<!-- Example LOGIN DETAILS 
+Username - "admin"
+password - "crowd123" -->
+
+
+<div id="loginScreen" class="login-wrapper">
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <p>Restricted access</p>
+
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button onclick="login()">Login</button>
+
+    <span id="loginError">Invalid credentials</span>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none;">
+
+  <header class="topbar">
+  <div class="topbar-left">
+    <h1>Crowd Operations Console</h1>
+    <span class="subtitle">Authorized Admin Access</span>
+  </div>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+  <section class="stats">
+    <div class="stat-card">
+      <span>Total Locations</span>
+      <h2>15</h2>
+    </div>
+    <div class="stat-card">
+      <span>Active Cameras</span>
+      <h2>24</h2>
+    </div>
+    <div class="stat-card alert">
+      <span>High Crowd Zones</span>
+      <h2 id="highZones">3</h2>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-header">
+      <h3>Crowd Trend (Last 30 Minutes)</h3>
+    </div>
+    <canvas id="chart"></canvas>
+  </section>
+
+  <section class="panel">
+    <h3>Crowd Heat Indicator</h3>
+    <div class="heat-list" id="heatList"></div>
+  </section>
+
+  <section class="panel">
+    <h3>Location-wise Crowd Status</h3>
+    <table class="crowd-table">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>People</th>
+          <th>Status</th>
+          <th>Pressure</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </section>
+
+</div>
+
+</body>
+</html>
+
+
