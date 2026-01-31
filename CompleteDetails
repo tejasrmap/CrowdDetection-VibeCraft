@@ -1,0 +1,129 @@
+Campus Crowd Monitoring & Decision System
+
+A real-time crowd monitoring system that leverages existing CCTV cameras and computer vision to help university students make smarter decisions about when and where to go, based on live crowd conditions and behavioral patterns.
+
+
+🧩 Problem Statement
+
+
+University students often face uncertainty and time loss due to unpredictable crowd congestion in places like mess halls, cafeterias, and libraries. With limited breaks between classes, students lack real-time visibility into crowd conditions and are forced to make inefficient decisions. Despite the presence of CCTV cameras on campuses, this data is rarely utilized to provide actionable insights. There is a need for a real-time, automated crowd monitoring system that analyzes live camera feeds and presents clear, understandable crowd information to students.
+
+
+🎯 Solution Overview
+
+
+This system:
+
+Uses YOLO-based computer vision to detect and count people from live CCTV feeds
+
+Classifies crowd levels as Low / Medium / High
+
+Stores crowd data in a database for analysis
+
+Displays real-time status and behavioral patterns through a student-friendly web dashboard
+
+Helps students decide whether it is worth visiting a location at a given time
+
+
+🛠️ Tech Stack Used
+
+Computer Vision & AI
+
+YOLOv8 – Real-time person detection
+
+OpenCV – Video capture and frame processing
+
+Backend
+
+Python
+
+Flask – REST API for serving live and historical data
+
+MongoDB – Crowd data storage (location, people count, crowd level, timestamp)
+
+Frontend
+
+HTML
+
+CSS
+
+JavaScript
+
+Tools & Environment
+
+Webcam / CCTV feed
+
+VS Code
+
+GitHub
+
+
+🏗️ System Architecture
+
+
+┌──────────────────────────────┐
+│        USER INTERFACE        │
+│  (Student / Admin Dashboard) │
+│  HTML • CSS • JavaScript     │
+└──────────────▲───────────────┘
+               │ REST API (JSON)
+               ▼
+┌──────────────────────────────┐
+│        BACKEND SERVER        │
+│          Flask API           │
+│ app.py | crowd_logic.py      │
+└──────────────▲───────────────┘
+               │ Mongo Queries
+               ▼
+┌──────────────────────────────┐
+│         DATABASE LAYER       │
+│           MongoDB            │
+│  crowd_stats collection      │
+└──────────────▲───────────────┘
+               │ Inserts
+               ▼
+┌──────────────────────────────┐
+│     COMPUTER VISION LAYER    │
+│ YOLOv8 + OpenCV + Tracking   │
+│ peoplecounter.py             │
+└──────────────▲───────────────┘
+               │ Video Frames
+               ▼
+┌──────────────────────────────┐
+│       INPUT SOURCES          │
+│ Webcam / CCTV Cameras        │
+│ (Multi-location supported)   │
+└──────────────────────────────┘
+
+
+📈 Features
+
+Real-time people counting using CCTV
+
+Crowd level classification
+
+Multi-location support
+
+Pattern-based crowd insights
+
+Student-friendly decision recommendations
+
+Clean and responsive dashboard UI
+
+
+🚀 Future Enhancements
+
+Historical trend visualization
+
+Predictive crowd estimation
+
+Mobile application support
+
+Cloud deployment
+
+Heatmaps and alerts
+
+
+🏁 Conclusion
+
+By converting passive CCTV feeds into actionable crowd intelligence, this system improves campus efficiency, reduces time wastage, and enhances the daily experience of students using shared facilities.
