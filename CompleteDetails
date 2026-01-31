@@ -1,65 +1,15 @@
 Campus Crowd Monitoring & Decision System
 
-A real-time crowd monitoring system that leverages existing CCTV cameras and computer vision to help university students make smarter decisions about when and where to go, based on live crowd conditions and behavioral patterns.
+
+A real-time crowd monitoring system that uses computer vision on existing CCTV feeds to help university students make smarter decisions about when and where to go, based on live crowd conditions and behavioral patterns.
 
 
 🧩 Problem Statement
 
-
-University students often face uncertainty and time loss due to unpredictable crowd congestion in places like mess halls, cafeterias, and libraries. With limited breaks between classes, students lack real-time visibility into crowd conditions and are forced to make inefficient decisions. Despite the presence of CCTV cameras on campuses, this data is rarely utilized to provide actionable insights. There is a need for a real-time, automated crowd monitoring system that analyzes live camera feeds and presents clear, understandable crowd information to students.
-
-
-🎯 Solution Overview
+University students often face uncertainty and time loss due to unpredictable crowd congestion in locations such as mess halls, cafeterias, and libraries. With limited breaks between classes, students lack real-time visibility into crowd conditions and are forced to make inefficient decisions. Although most campuses are equipped with CCTV cameras, this data is rarely utilized to provide actionable insights. There is a need for a real-time, automated system that analyzes live camera feeds and presents clear crowd information to students.
 
 
-This system:
-
-Uses YOLO-based computer vision to detect and count people from live CCTV feeds
-
-Classifies crowd levels as Low / Medium / High
-
-Stores crowd data in a database for analysis
-
-Displays real-time status and behavioral patterns through a student-friendly web dashboard
-
-Helps students decide whether it is worth visiting a location at a given time
-
-
-🛠️ Tech Stack Used
-
-Computer Vision & AI
-
-YOLOv8 – Real-time person detection
-
-OpenCV – Video capture and frame processing
-
-Backend
-
-Python
-
-Flask – REST API for serving live and historical data
-
-MongoDB – Crowd data storage (location, people count, crowd level, timestamp)
-
-Frontend
-
-HTML
-
-CSS
-
-JavaScript
-
-Tools & Environment
-
-Webcam / CCTV feed
-
-VS Code
-
-GitHub
-
-
-🏗️ System Architecture
-
+🏗️ Simple Architecture Diagram
 
 ┌──────────────────────────────┐
 │        USER INTERFACE        │
@@ -96,34 +46,108 @@ GitHub
 └──────────────────────────────┘
 
 
-📈 Features
+🛠️ Tech Stack Used
 
-Real-time people counting using CCTV
+Computer Vision & AI
 
-Crowd level classification
+YOLOv8 – Real-time person detection
 
-Multi-location support
+OpenCV – Video capture and frame processing
 
-Pattern-based crowd insights
+Backend
 
-Student-friendly decision recommendations
+Python
 
-Clean and responsive dashboard UI
+Flask – REST API
+
+MongoDB – Crowd data storage
+
+Frontend
+
+HTML
+
+CSS
+
+JavaScript
+
+Tools
+
+Webcam / CCTV feed
+
+VS Code
+
+GitHub
 
 
-🚀 Future Enhancements
+⚙️ Setup Instructions
 
-Historical trend visualization
+1️⃣ Clone the repository
+git clone https://github.com/your-username/campus-crowd-monitoring.git
+cd campus-crowd-monitoring
 
-Predictive crowd estimation
+2️⃣ Install dependencies
+pip install -r requirements.txt
 
-Mobile application support
+3️⃣ Start MongoDB
 
-Cloud deployment
+Make sure MongoDB is running locally:
 
-Heatmaps and alerts
+mongod
+
+4️⃣ Run the people counting module
+python peoplecounter.py
+
+5️⃣ Start the backend server
+python app.py
+
+6️⃣ Open the dashboard
+
+Open student.html in your browser or run via a local server.
+
+
+🤖 AI Tools Used
+
+
+YOLOv8 – Deep learning model for detecting people in video frames
+
+OpenCV – Real-time video processing and frame handling
+
+Rule-based logic – Crowd classification and pattern generation
+
+ChatGPT – Used for:
+
+System design guidance
+
+UI/UX structuring
+
+Pattern logic formulation
+
+Documentation and explanation
+
+
+🧠 Prompt Strategy Summary
+
+The AI assistant was guided using incremental and task-specific prompts, such as:
+
+Designing system architecture step-by-step
+
+Debugging frontend and backend integration issues
+
+Improving UI layout and spacing without breaking logic
+
+Generating clear problem statements and documentation
+
+Prompts focused on:
+
+Minimal changes per step
+
+Clear separation of frontend and backend
+
+Stability before adding features
+
+Hackathon-ready clarity and simplicity
 
 
 🏁 Conclusion
 
-By converting passive CCTV feeds into actionable crowd intelligence, this system improves campus efficiency, reduces time wastage, and enhances the daily experience of students using shared facilities.
+This project demonstrates how existing CCTV infrastructure can be transformed into a real-time crowd intelligence system. By combining computer vision, backend APIs, and a student-friendly dashboard, the system helps reduce time wastage and improves decision-making on campus
