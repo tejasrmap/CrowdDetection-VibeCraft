@@ -268,3 +268,49 @@ function animateNumber(el, to) {
     }
   }, 20);
 }
+
+function updatePatterns(data) {
+  const count = data.people_count || 0;
+  const level = data.crowd_level || "Low";
+
+  // Crowd Trend
+  document.getElementById("pattern-trend").innerText =
+    count > 20 ? "Increasing steadily" :
+    count > 10 ? "Stable movement" :
+    "Low activity";
+
+  // Peak Analysis
+  document.getElementById("pattern-peak").innerText =
+    level === "High"
+      ? "Peak period detected (lunch / break time)"
+      : "No peak activity currently";
+
+  // Crowd Stability
+  document.getElementById("pattern-stability").innerText =
+    level === "High"
+      ? "Unstable (rapid inflow & queues)"
+      : "Stable and manageable";
+
+  // Decision Confidence
+  document.getElementById("pattern-confidence").innerText =
+    level === "Low"
+      ? "High confidence to proceed"
+      : level === "Medium"
+      ? "Moderate confidence"
+      : "Low confidence";
+
+  // Student Advice
+  document.getElementById("pattern-advice").innerText =
+    level === "High"
+      ? "Delay visit by 20–30 minutes"
+      : "Safe to proceed now";
+
+  // Last 30 minutes trend
+  document.getElementById("pattern-30min").innerText =
+    count > 20
+      ? "Crowd rose sharply in last 30 minutes"
+      : count > 10
+      ? "Minor fluctuations observed"
+      : "Consistently low crowd";
+}
+
