@@ -4,12 +4,12 @@ Campus Crowd Monitoring & Decision System
 A real-time crowd monitoring system that uses computer vision on existing CCTV feeds to help university students make smarter decisions about when and where to go, based on live crowd conditions and behavioral patterns.
 
 
-🧩 Problem Statement
+Problem Statement
 
 University students often face uncertainty and time loss due to unpredictable crowd congestion in locations such as mess halls, cafeterias, and libraries. With limited breaks between classes, students lack real-time visibility into crowd conditions and are forced to make inefficient decisions. Although most campuses are equipped with CCTV cameras, this data is rarely utilized to provide actionable insights. There is a need for a real-time, automated system that analyzes live camera feeds and presents clear crowd information to students.
 
 
-🏗️ Simple Architecture Diagram
+Simple Architecture Diagram
 
 ┌──────────────────────────────┐
 │        USER INTERFACE        │
@@ -79,7 +79,7 @@ VS Code
 GitHub
 
 
-⚙️ Setup Instructions
+Setup Instructions
 
 1️⃣ Clone the repository
 git clone https://github.com/your-username/campus-crowd-monitoring.git
@@ -105,7 +105,7 @@ python app.py
 Open student.html in your browser or run via a local server.
 
 
-🤖 AI Tools Used
+AI Tools Used
 
 
 YOLOv8 – Deep learning model for detecting people in video frames
@@ -125,7 +125,38 @@ Pattern logic formulation
 Documentation and explanation
 
 
-🧠 Prompt Strategy Summary
+List of Prompts Used During Development
+
+During development, AI assistance was used iteratively with focused prompts to guide design, implementation, debugging, and documentation. Below is a representative list of prompts used:
+
+“Suggest a problem statement for a real-time campus crowd monitoring system using CCTV.”
+
+“Design a simple and scalable system architecture for a crowd monitoring application using computer vision and a web dashboard.”
+
+“How can YOLOv8 be used to detect and count people from a live webcam feed?”
+
+“Provide backend structure and API design for serving live crowd data using Flask and MongoDB.”
+
+“How to classify crowd levels (Low / Medium / High) based on people count?”
+
+“Debug Python import and module errors in a Flask + OpenCV project.”
+
+“How to smooth people count to avoid flickering in real-time detection?”
+
+“Create a student-friendly dashboard UI using HTML, CSS, and JavaScript.”
+
+“Improve UI spacing and layout to make the dashboard look clean and professional.”
+
+“Add a patterns section that explains crowd behavior in simple text form.”
+
+“How to connect frontend JavaScript with backend APIs to display live data?”
+
+“Generate a simple architecture diagram suitable for GitHub README.”
+
+“Write a concise problem statement and tech stack description for a hackathon project.”
+
+“Summarize the AI tools used and prompt strategy for documentation.”
+Prompt Strategy Summary
 
 The AI assistant was guided using incremental and task-specific prompts, such as:
 
