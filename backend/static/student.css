@@ -452,3 +452,11 @@ h2 {
   display: block;
 }
 
+/* Space between main heading and subtitle */
+.title-block h1 {
+  margin-bottom: 14px;   /* increase/decrease if needed */
+}
+
+.title-block p {
+  margin-top: 0;
+}
