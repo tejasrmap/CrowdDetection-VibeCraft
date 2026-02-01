@@ -1,37 +1,26 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Admin | Crowd Intelligence</title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
-
-  <!-- Chart.js (REQUIRED) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Admin logic -->
   <script src="{{ url_for('static', filename='admin.js') }}" defer></script>
 </head>
 
-
 <body>
 
-<!-- LOGIN SCREEN -->
-<!-- Example LOGIN DETAILS 
-Username - "admin"
-password - "crowd123" -->
-
-
+<!-- LOGIN -->
 <div id="loginScreen" class="login-wrapper">
   <div class="login-box">
     <h2>Admin Login</h2>
     <p>Restricted access</p>
 
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
 
     <button onclick="login()">Login</button>
-
     <span id="loginError">Invalid credentials</span>
   </div>
 </div>
@@ -40,13 +29,12 @@ password - "crowd123" -->
 <div id="dashboard" style="display:none;">
 
   <header class="topbar">
-  <div class="topbar-left">
-    <h1>Crowd Operations Console</h1>
-    <span class="subtitle">Authorized Admin Access</span>
-  </div>
-
-  <button class="logout-btn" onclick="logout()">Logout</button>
-</header>
+    <div class="topbar-left">
+      <h1>Crowd Operations Console</h1>
+      <span class="subtitle">Authorized Admin Access</span>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
 
   <section class="stats">
     <div class="stat-card">
@@ -59,20 +47,13 @@ password - "crowd123" -->
     </div>
     <div class="stat-card alert">
       <span>High Crowd Zones</span>
-      <h2 id="highZones">3</h2>
+      <h2 id="highZones">0</h2>
     </div>
   </section>
 
   <section class="panel">
-    <div class="panel-header">
-      <h3>Crowd Trend (Last 30 Minutes)</h3>
-    </div>
+    <h3>Crowd Trend (Last 30 Records)</h3>
     <canvas id="chart"></canvas>
-  </section>
-
-  <section class="panel">
-    <h3>Crowd Heat Indicator</h3>
-    <div class="heat-list" id="heatList"></div>
   </section>
 
   <section class="panel">
@@ -91,8 +72,5 @@ password - "crowd123" -->
   </section>
 
 </div>
-
 </body>
 </html>
-
-
