@@ -1,0 +1,184 @@
+Campus Crowd Monitoring & Decision System
+
+
+A real-time crowd monitoring system that uses computer vision on existing CCTV feeds to help university students make smarter decisions about when and where to go, based on live crowd conditions and behavioral patterns.
+
+
+Problem Statement
+
+University students often face uncertainty and time loss due to unpredictable crowd congestion in locations such as mess halls, cafeterias, and libraries. With limited breaks between classes, students lack real-time visibility into crowd conditions and are forced to make inefficient decisions. Although most campuses are equipped with CCTV cameras, this data is rarely utilized to provide actionable insights. There is a need for a real-time, automated system that analyzes live camera feeds and presents clear crowd information to students.
+
+
+Simple Architecture Diagram
+
+┌──────────────────────────────┐
+│        USER INTERFACE        │
+│  (Student / Admin Dashboard) │
+│  HTML • CSS • JavaScript     │
+└──────────────▲───────────────┘
+               │ REST API (JSON)
+               ▼
+┌──────────────────────────────┐
+│        BACKEND SERVER        │
+│          Flask API           │
+│ app.py | crowd_logic.py      │
+└──────────────▲───────────────┘
+               │ Mongo Queries
+               ▼
+┌──────────────────────────────┐
+│         DATABASE LAYER       │
+│           MongoDB            │
+│  crowd_stats collection      │
+└──────────────▲───────────────┘
+               │ Inserts
+               ▼
+┌──────────────────────────────┐
+│     COMPUTER VISION LAYER    │
+│ YOLOv8 + OpenCV + Tracking   │
+│ peoplecounter.py             │
+└──────────────▲───────────────┘
+               │ Video Frames
+               ▼
+┌──────────────────────────────┐
+│       INPUT SOURCES          │
+│ Webcam / CCTV Cameras        │
+│ (Multi-location supported)   │
+└──────────────────────────────┘
+
+
+Tech Stack Used
+
+Computer Vision & AI
+
+YOLOv8 – Real-time person detection
+
+OpenCV – Video capture and frame processing
+
+Backend
+
+Python
+
+Flask – REST API
+
+MongoDB – Crowd data storage
+
+Frontend
+
+HTML
+
+CSS
+
+JavaScript
+
+Tools
+
+Webcam / CCTV feed
+
+VS Code
+
+GitHub
+
+
+Setup Instructions
+
+1️⃣ Clone the repository
+git clone https://github.com/your-username/campus-crowd-monitoring.git
+cd campus-crowd-monitoring
+
+2️⃣ Install dependencies
+pip install -r requirements.txt
+
+3️⃣ Start MongoDB
+
+Make sure MongoDB is running locally:
+
+mongod
+
+4️⃣ Run the people counting module
+python peoplecounter.py
+
+5️⃣ Start the backend server
+python app.py
+
+6️⃣ Open the dashboard
+
+Open student.html in your browser or run via a local server.
+
+
+AI Tools Used
+
+
+YOLOv8 – Deep learning model for detecting people in video frames
+
+OpenCV – Real-time video processing and frame handling
+
+Rule-based logic – Crowd classification and pattern generation
+
+ChatGPT – Used for:
+
+System design guidance
+
+UI/UX structuring
+
+Pattern logic formulation
+
+Documentation and explanation
+
+
+List of Prompts Used During Development
+
+During development, AI assistance was used iteratively with focused prompts to guide design, implementation, debugging, and documentation. Below is a representative list of prompts used:
+
+“Suggest a problem statement for a real-time campus crowd monitoring system using CCTV.”
+
+“Design a simple and scalable system architecture for a crowd monitoring application using computer vision and a web dashboard.”
+
+“How can YOLOv8 be used to detect and count people from a live webcam feed?”
+
+“Provide backend structure and API design for serving live crowd data using Flask and MongoDB.”
+
+“How to classify crowd levels (Low / Medium / High) based on people count?”
+
+“Debug Python import and module errors in a Flask + OpenCV project.”
+
+“How to smooth people count to avoid flickering in real-time detection?”
+
+“Create a student-friendly dashboard UI using HTML, CSS, and JavaScript.”
+
+“Improve UI spacing and layout to make the dashboard look clean and professional.”
+
+“Add a patterns section that explains crowd behavior in simple text form.”
+
+“How to connect frontend JavaScript with backend APIs to display live data?”
+
+“Generate a simple architecture diagram suitable for GitHub README.”
+
+“Write a concise problem statement and tech stack description for a hackathon project.”
+
+“Summarize the AI tools used and prompt strategy for documentation.”
+Prompt Strategy Summary
+
+The AI assistant was guided using incremental and task-specific prompts, such as:
+
+Designing system architecture step-by-step
+
+Debugging frontend and backend integration issues
+
+Improving UI layout and spacing without breaking logic
+
+Generating clear problem statements and documentation
+
+Prompts focused on:
+
+Minimal changes per step
+
+Clear separation of frontend and backend
+
+Stability before adding features
+
+Hackathon-ready clarity and simplicity
+
+
+Conclusion
+
+This project demonstrates how existing CCTV infrastructure can be transformed into a real-time crowd intelligence system. By combining computer vision, backend APIs, and a student-friendly dashboard, the system helps reduce time wastage and improves decision-making on campus
