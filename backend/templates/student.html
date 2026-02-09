@@ -1,106 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Campus Crowd Monitoring</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='student.css') }}">
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Campus Crowd Monitoring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='student.css') }}">
+  </head>
+  <body>
 
-<div class="shell">
-  <aside class="nav">
-    <div class="brand">Crowd Monitoring</div>
-    <ul class="nav-list">
-      <li class="nav-item active" data-view="live">Live Overview</li>
-      <li class="nav-item" data-view="locations">Locations</li>
-      <li class="nav-item" data-view="patterns">Patterns</li>
-    </ul>
-    <div class="nav-footer">CCTV Analytics</div>
-  </aside>
+  <div class="shell">
+    <aside class="nav">
+      <div class="brand">Crowd Monitoring</div>
+      <ul class="nav-list">
+        <li class="nav-item active" data-view="live">Live Overview</li>
+        <li class="nav-item" data-view="locations">Locations</li>
+        <li class="nav-item" data-view="patterns">Patterns</li>
+      </ul>
+      <div class="nav-footer">CCTV Analytics</div>
+    </aside>
 
-  <main class="main">
-    <header class="header">
-      <div>
-      
-        <h1 id="pageTitle">Main Mess</h1>
-        <p>Where Manual Process Fails , Our Solution Finds its Way in Helping Students.</p>
-      </div>
-      <div class="dropdown">
-        <button id="dropdownBtn">Main Mess ▾</button>
-        <div class="dropdown-menu"></div>
-      </div>
-    </header>
-
-    <section id="live" class="view active-view">
-      <div class="decision">
-        <span>System Recommendation</span>
-        <h2 id="decision">—</h2>
-      </div>
-
-      <div class="metrics-grid">
-        <div class="panel big">
-          <span>People Detected</span>
-          <span id="people">—</span>
+    <main class="main">
+      <header class="header">
+        <div>
+        
+          <h1 id="pageTitle">Main Mess</h1>
+          <p>Where Manual Process Fails , Our Solution Finds its Way in Helping Students.</p>
         </div>
-        <div class="panel">
-          <span>Crowd Status</span>
-          <span id="crowd">—</span>
+        <div class="dropdown">
+          <button id="dropdownBtn">Main Mess ▾</button>
+          <div class="dropdown-menu"></div>
         </div>
-        <div class="panel">
-          <span>Queue Pressure</span>
-          <span id="pressure">—</span>
+      </header>
+
+      <section id="live" class="view active-view">
+        <div class="decision">
+          <span>System Recommendation</span>
+          <h2 id="decision">—</h2>
         </div>
-      </div>
-    </section>
 
-    <section id="locations" class="view">
-      <div class="location-grid" id="locationGrid"></div>
-    </section>
+        <div class="metrics-grid">
+          <div class="panel big">
+            <span>People Detected</span>
+            <span id="people">—</span>
+          </div>
+          <div class="panel">
+            <span>Crowd Status</span>
+            <span id="crowd">—</span>
+          </div>
+          <div class="panel">
+            <span>Queue Pressure</span>
+            <span id="pressure">—</span>
+          </div>
+        </div>
+      </section>
 
-   <section id="patterns" class="view">
+      <section id="locations" class="view">
+        <div class="location-grid" id="locationGrid"></div>
+      </section>
 
-  <h2 class="section-title">Crowd Behaviour & Patterns</h2>
+    <section id="patterns" class="view">
 
-  <div class="analysis-grid">
+    <h2 class="section-title">Crowd Behaviour & Patterns</h2>
 
-   <div class="analysis-card">
-  <h3>📈 Crowd Trend</h3>
-  <p id="pattern-trend">—</p>
-</div>
+    <div class="analysis-grid">
 
-<div class="analysis-card">
-  <h3>⏰ Peak Analysis</h3>
-  <p id="pattern-peak">—</p>
-</div>
-
-<div class="analysis-card">
-  <h3>📊 Crowd Stability</h3>
-  <p id="pattern-stability">—</p>
-</div>
-
-<div class="analysis-card">
-  <h3>✅ Decision Confidence</h3>
-  <p id="pattern-confidence">—</p>
-</div>
-
-<div class="analysis-card">
-  <h3>🎓 Student Advice</h3>
-  <p id="pattern-advice">—</p>
-</div>
-
-<div class="analysis-card">
-  <h3>🕒 Crowd Trend (Last 30 mins)</h3>
-  <p id="pattern-30min">—</p>
-</div>
-
+    <div class="analysis-card">
+    <h3>📈 Crowd Trend</h3>
+    <p id="pattern-trend">—</p>
   </div>
 
-</section>
+  <div class="analysis-card">
+    <h3>⏰ Peak Analysis</h3>
+    <p id="pattern-peak">—</p>
+  </div>
 
-  </main>
-</div>
+  <div class="analysis-card">
+    <h3>📊 Crowd Stability</h3>
+    <p id="pattern-stability">—</p>
+  </div>
 
-<script src="{{ url_for('static', filename='student.js') }}"></script>
-</body>
-</html>
+  <div class="analysis-card">
+    <h3>✅ Decision Confidence</h3>
+    <p id="pattern-confidence">—</p>
+  </div>
+
+  <div class="analysis-card">
+    <h3>🎓 Student Advice</h3>
+    <p id="pattern-advice">—</p>
+  </div>
+
+  <div class="analysis-card">
+    <h3>🕒 Crowd Trend (Last 30 mins)</h3>
+    <p id="pattern-30min">—</p>
+  </div>
+
+    </div>
+
+  </section>
+
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='student.js') }}"></script>
+  </body>
+  </html>
